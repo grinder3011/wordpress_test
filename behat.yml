@@ -1,0 +1,14 @@
+default:
+  autoload:
+    '': %paths.base%/features/bootstrap
+  extensions:
+    Behat\MinkExtension:
+      goutte:    ~
+      base_url: http://em.wikipedia.org/
+  suites:
+    default:
+      paths:
+        - %paths.base%/features
+
+
+
