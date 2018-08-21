@@ -66,7 +66,7 @@ before_script:
     # Pull in the WP Core jshint rules.
     - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
     - sudo apt-get update > /dev/null
-    - sudo apt-get install -y --force-yes apache2 libapache2-mod-php7 php7-curl php7-mysql php7-intl
+    - sudo apt-get install -y --force-yes apache2 libapache2-mod-php7.0 php7.0-curl php7.0-mysql php7.0-intl
     - sudo sed -i -e "s,/var/www,$(pwd)/web,g" /etc/apache2/sites-available/default
     - sudo /etc/init.d/apache2 restart
     - sudo sed -i -e "/DocumentRoot/i\ServerName wordpress" /etc/apache2/sites-available/default
