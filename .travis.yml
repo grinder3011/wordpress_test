@@ -69,7 +69,6 @@ before_script:
     - sudo apt-get update > /dev/null
     - sudo apt-get install -y --force-yes apache2 libapache2-mod-php7.0 php7.0-curl php7.0-mysql php7.0-intl
     - sudo sed -i -e "s,/var/www,$(pwd)/web,g" /etc/apache2/sites-available/default
-    - sudo /etc/init.d/apache2 restart
     - sudo sed -i -e "/DocumentRoot/i\ServerName wordpress" /etc/apache2/sites-available/default
     - echo "127.0.0.1 wordpress" | sudo tee -a /etc/hosts
     - sudo /etc/init.d/apache2 restart
