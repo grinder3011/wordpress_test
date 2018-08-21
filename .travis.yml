@@ -67,6 +67,7 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
     - composer install
     - composer self-update
+    - "sh start-server.sh > /dev/null &"
 
 ## Run test script commands.
 # Default is specific to project language.
