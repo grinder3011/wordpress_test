@@ -65,11 +65,8 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
     # Pull in the WP Core jshint rules.
     - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
-    - sudo add-apt-repository ppa:ondrej/php -y
-    - sudo apt-get update > /dev/null
-    - sudo apt-get install -y --force-yes apache2 libapache2-mod-php7.0 php7.0-curl php7.0-mysql php7.0-intl
-    - sudo /etc/init.d/apache2 restart
-
+    - composer install
+    - composer self-update
 
 ## Run test script commands.
 # Default is specific to project language.
