@@ -1,9 +1,14 @@
 <?php
 
+require_once __DIR__.'/../../vendor/autoload.php';
+use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext;
+use Behat\Mink\Driver\BrowserKitDriver;
+use Behat\Mink\Driver\CoreDriver;
+
 /**
  * Defines application features from the specific context.
  */
