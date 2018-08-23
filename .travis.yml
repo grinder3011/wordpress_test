@@ -29,7 +29,6 @@ before_script:
   - npm install --dev
   - npm run run & 
   - sleep 5 
-  - selenium -version
 
 # Commands you want to run that will verify your build.
 script: vendor/bin/behat
