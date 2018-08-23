@@ -15,7 +15,7 @@ before_script:
   - sudo apt-get update > /dev/null
   - sudo apt-get install -y --force-yes apache2 libapache2-mod-php7.0 php7.0-curl php7.0-mysql php7.0-intl
   - sudo /etc/init.d/apache2 restart
-
+  - selenium -version
 # Commands you want to run that will verify your build.
 script: vendor/bin/behat
 
