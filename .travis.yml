@@ -69,11 +69,11 @@ before_script:
     - sudo apt-get update > /dev/null
     - sudo apt-get install -y --force-yes apache2 libapache2-mod-php7.0 php7.0-curl php7.0-mysql php7.0-intl
     - sudo /etc/init.d/apache2 restart
-    - "sh -e /etc/init.d/xvfb start"
-    - "export DISPLAY=:99.0"
-    - "wget http://selenium.googlecode.com/files/selenium-server-standalone-3.9.1.jar"
-    - "java -jar selenium-server-standalone-3.9.1.jar > /dev/null &"
-    - sleep 5
+    #- "sh -e /etc/init.d/xvfb start"
+    #- "export DISPLAY=:99.0"
+    #- "wget http://selenium.googlecode.com/files/selenium-server-standalone-3.9.1.jar"
+    #- "java -jar selenium-server-standalone-3.9.1.jar > /dev/null &"
+    #- sleep 5
   
 ## Run test script commands.
 # Default is specific to project language.
