@@ -9,6 +9,11 @@ php:
   - 7.0
   - 7.1
 
+mysql:
+  database: wordpress_test
+  username: root
+  encoding: utf8
+
 # Commands to be run before your environment runs.
 before_script:
   - composer self-update
@@ -17,7 +22,8 @@ before_script:
   - sudo apt-get update > /dev/null
   - sudo apt-get install -y --force-yes apache2 libapache2-mod-php7.0 php7.0-curl php7.0-mysql php7.0-intl
   - sudo /etc/init.d/apache2 restart
- 
+  - phpenv config-rm xdebug.ini
+  - mysql -e 'create database wordpress_test'
   - sh -e /etc/init.d/xvfb start
   - export DISPLAY=:99.0 
   - wget http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.1.jar
