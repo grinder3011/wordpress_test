@@ -8,6 +8,7 @@ use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext;
 use Behat\Mink\Driver\BrowserKitDriver;
 use Behat\Mink\Driver\CoreDriver;
+Use Behat\Mink\Driver\Selenium2Driver;
 
 /**
  * Defines application features from the specific context.

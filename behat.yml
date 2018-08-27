@@ -3,8 +3,18 @@ default:
     '': %paths.base%/features/bootstrap
   extensions:
     Behat\MinkExtension:
+      base_url: http://127.0.0.1:8000
+      javascript_session: selenium2
+
+      browser_name: chrome
       goutte:    ~
-      base_url:
+      selenium2:
+        capabilities:
+                # required by mink-extension 2.3
+                marionette: null
+                browserName: chrome
+                browser: chrome
+                version: 63 	
   suites:
     default:
       paths:

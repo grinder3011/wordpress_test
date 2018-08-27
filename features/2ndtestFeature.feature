@@ -1,9 +1,13 @@
 Feature: ls
-  In order to see the directory structure
-  As a UNIX user
-  I need to be able to list the current directory's contents
+  In order to login I need to navigate to the login page
 
-Scenario: Visit the home page and click a link
-  When I go to "http://localhost/wordpress" 
+@javascript
+Scenario: Visit the home page and click the login link
+  When I go to "http://localhost/wordpress"
   And I follow "Log in"
-  Then I should be on "http://localhost/wordpress/wp-login.php" 
+  Then I should be on "http://localhost/wordpress/wp-login.php"
+
+
+
+
+
