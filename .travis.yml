@@ -21,16 +21,20 @@ addons:
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction
+  # Install php7 and relevant dependancies for the project 
   - sudo add-apt-repository ppa:ondrej/php -y
   - sudo apt-get update > /dev/null
   - sudo apt-get install -y --force-yes apache2 libapache2-mod-php7.0 php7.0-curl php7.0-mysql php7.0-intl
   - sudo /etc/init.d/apache2 restart
+  # Disables xdebug for faster performance
   - phpenv config-rm xdebug.ini
+  # Create mysql database for the wordpress site
   - mysql -e 'create database wordpress_test'
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-  #  - sudo wget https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip -P /usr/local/share
-  #- sudo unzip /usr/local/share/chromedriver_linux64.zip -d /usr/local/share
-  #- sudo rm /usr/local/share/chromedriver_linux64.zip
+  # Install chrome driver for selenium server 
+  - sudo wget https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip -P /usr/local/share
+  - sudo unzip /usr/local/share/chromedriver_linux64.zip -d /usr/local/share
+  - sudo rm /usr/local/share/chromedriver_linux64.zip
+  # Install selenium web driver and give it 5 seconds as it needs some time to start up in order to not fail the build
   - sh -e /etc/init.d/xvfb start
   - export DISPLAY=:99.0 
   - wget http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.1.jar
