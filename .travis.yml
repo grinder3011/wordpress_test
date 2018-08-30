@@ -31,7 +31,7 @@ before_script:
   # Create mysql database for the wordpress site
   - mysql -e 'create database wordpress_test'
   # Install chrome driver for selenium server 
-  - sudo wget https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip -P /usr/local/share
+  - sudo wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip -P /usr/local/share
   - sudo unzip /usr/local/share/chromedriver_linux64.zip -d /usr/local/share
   - sudo rm /usr/local/share/chromedriver_linux64.zip
   # Install selenium web driver and give it 5 seconds as it needs some time to start up in order to not fail the build
