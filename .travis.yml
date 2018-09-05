@@ -1,7 +1,7 @@
 # Required to run your project under the correct environment.
 language: php
 
-sudo: required
+#sudo: required
 dist: trusty
 
 # Versions of PHP you want your project run with.
