@@ -1,6 +1,7 @@
 Feature: log in to wordpress
   In order to login I need to be on the login page and input the login data
 
+@javascript
 Scenario: Visit the login page and try to log in
   When I go to "http://localhost/wordpress/wp-login.php"
   And I fill in "log" with "drimma@gmail.com"
