@@ -16,7 +16,9 @@ mysql:
 
 addons:
   chrome: stable
-
+  apt:
+    packages:
+      - oracle-java8-installer
 # Commands to be run before your environment runs.
 before_script:
   - composer self-update
@@ -36,8 +38,8 @@ before_script:
   - sudo rm /usr/local/share/chromedriver_linux64.zip
   # Install selenium web driver and give it 5 seconds as it needs some time to start up in order to not fail the build
   - sh -e /etc/init.d/xvfb start
-  #- sleep 3 
-  #- export DISPLAY=:99.0 
+  - sleep 3 
+  - export DISPLAY=:99.0 
   - wget http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.1.jar
   - java -Dwebdriver.chrome.driver=/usr/local/share/chromedriver -jar selenium-server-standalone-3.9.1.jar > /dev/null &
   - sleep 5
