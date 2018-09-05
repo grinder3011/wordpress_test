@@ -14,7 +14,12 @@ default:
                 marionette: null
                 browserName: chrome
                 browser: chrome
-                version: 63 	
+                version: 63
+                chrome:
+                  switches:
+                    - "--headless"
+                    - "--disable-gpu"
+                    - "--no-sandbox"
   suites:
     default:
       paths:
