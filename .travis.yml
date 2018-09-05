@@ -31,15 +31,15 @@ before_script:
   # Create mysql database for the wordpress site
   - mysql -e 'create database wordpress_test'
   # Install chrome driver for selenium server 
-  - sudo wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip -P /usr/local/share
-  - sudo unzip /usr/local/share/chromedriver_linux64.zip -d /usr/local/share
-  - sudo rm /usr/local/share/chromedriver_linux64.zip
+  #- sudo wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip -P /usr/local/share
+  #- sudo unzip /usr/local/share/chromedriver_linux64.zip -d /usr/local/share
+  #- sudo rm /usr/local/share/chromedriver_linux64.zip
   # Install selenium web driver and give it 5 seconds as it needs some time to start up in order to not fail the build
-  - sh -e /etc/init.d/xvfb start
-  - export DISPLAY=:99.0 
-  - wget http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.1.jar
-  - java -Dwebdriver.chrome.driver=/usr/local/share/chromedriver -jar selenium-server-standalone-3.9.1.jar > /dev/null &
-  - sleep 5
+  #- sh -e /etc/init.d/xvfb start
+  #- export DISPLAY=:99.0 
+  #- wget http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.1.jar
+  #- java -Dwebdriver.chrome.driver=/usr/local/share/chromedriver -jar selenium-server-standalone-3.9.1.jar > /dev/null &
+  #- sleep 5
 
 # Commands you want to run that will verify your build.
 script: vendor/bin/behat features/login_test.feature
