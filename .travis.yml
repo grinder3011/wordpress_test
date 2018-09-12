@@ -9,10 +9,10 @@ php:
   - 7.0
   - 7.1
 
-mysql:
-  database: wordpress_test
-  username: root
-  encoding: utf8
+#mysql:
+#  database: wordpress_test
+#  username: root
+#  encoding: utf8
 
 addons:
   chrome: stable
@@ -31,7 +31,7 @@ before_script:
   # Disables xdebug for faster performance
   - phpenv config-rm xdebug.ini
   # Create mysql database for the wordpress site
-  - mysql -e 'create database wordpress_test'
+  # - mysql -e 'create database wordpress_test'
   # Install chrome driver for selenium server 
   - sudo wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip -P /usr/local/share
   - sudo unzip /usr/local/share/chromedriver_linux64.zip -d /usr/local/share
