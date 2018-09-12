@@ -1,8 +1,8 @@
 # Required to run your project under the correct environment.
 language: php
 
-#sudo: required
-dist: trusty
+sudo: required
+dist: xenial
 
 # Versions of PHP you want your project run with.
 php:
